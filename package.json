@@ -1,0 +1,22 @@
+{
+  "name": "proyecto-final-dam-express",
+  "version": "1.0.0",
+  "description": "backend proyecto final dam",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Javier Diego Ibáñez",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
