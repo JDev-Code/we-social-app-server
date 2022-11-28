@@ -73,11 +73,6 @@ io.on('connection', (socket) => {
   })
 
 
-  /*   socket.on('disconnect', () => {
-      console.log('user disconnected');
-    }) */
-  //Broadcast when a user connects
-
 })
 
 app.post('/login', async (req, res) => {
