@@ -1,12 +1,21 @@
-import mysql from 'mysql2/promise'
+import mysql from 'mysql2'
 
-const conn = mysql.createPool({
+const conn = mysql.createConnection({
   host: "containers-us-west-65.railway.app",
   user: "root",
   password: "aaa111!!!",
   database: "railway",
   port: 7312
 })
+
+conn.connect(function (err) {
+  try {
+    if (err) throw err
+    console.log("DATABASE CONNECTED!")
+  } catch {
+    console.log('ERROR: ' + err.code)
+  }
+}) 
 
 export default conn
 
