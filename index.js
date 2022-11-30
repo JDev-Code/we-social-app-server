@@ -19,7 +19,7 @@ let connections = []
 
 // Run when client connects
 io.on('connection', (socket) => {
-  console.log('just connected:', socket)
+  console.log('just connected:', socket.id)
   console.log(connections);
   socket.emit('welcome', 'WELCOME: ' + socket.id)
 
