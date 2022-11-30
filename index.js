@@ -20,6 +20,7 @@ let connections = []
 // Run when client connects
 io.on('connection', (socket) => {
   console.log('just connected')
+  console.log(connections);
   socket.emit('welcome', 'WELCOME: ' + socket.id)
 
   socket.on('createRoom', async myRoom => {
