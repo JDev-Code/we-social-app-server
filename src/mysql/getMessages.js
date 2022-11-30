@@ -7,7 +7,7 @@ async function getMessages (myId) {
                     INNER JOIN users U 
                       ON (M.msgFrom=U.id OR M.msgTo=U.id) 
                         WHERE (M.msgFrom='${myId}' OR M.msgTo='${myId}') 
-                          AND U.id!='${myId}'`
+                          AND U.id!='${myId}' ORDER BY M.msgID`
 
   return new Promise((resolve) => {
 
