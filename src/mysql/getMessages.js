@@ -2,7 +2,7 @@ import conn from './connection.js'
 
 async function getMessages (myId) {
 
-  const query = `SELECT M.msgID, M.msgFrom, M.msgTo, M.message, M.isRead, U.username, U.identifier 
+  const query = `SELECT M.msgFrom, M.msgTo, M.message, M.isRead, U.username, U.identifier 
                   FROM messages M 
                     INNER JOIN users U 
                       ON (M.msgFrom=U.id OR M.msgTo=U.id) 
