@@ -20,7 +20,7 @@ async function logIn (email, password) {
           resolve(userInfo)
         }
       } catch {
-        console.log('ERROR: ' + err.sqlMessage);
+        console.log('ERROR: ' + err.message);
       }
     })
   })

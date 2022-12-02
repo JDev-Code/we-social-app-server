@@ -15,7 +15,7 @@ async function checkEmail (email) {
           resolve(false)
         }
       } catch {
-        console.log('ERROR: ' + err.sqlMessage);
+        console.log('ERROR: ' + err.message);
       }
     })
   })

@@ -13,7 +13,7 @@ conn.connect(function (err) {
     if (err) throw err
     console.log("DATABASE CONNECTED!")
   } catch {
-    console.log('ERROR: ' + err.code)
+    console.log('ERROR: ' + err.message)
   }
 }) 
 

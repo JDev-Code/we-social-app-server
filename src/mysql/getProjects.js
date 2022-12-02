@@ -13,7 +13,7 @@ async function getProjects () {
           resolve(result)
         }
       } catch {
-        console.log('ERROR: ' + err.sqlMessage);
+        console.log('ERROR: ' + err.message);
       }
     })
   }) 

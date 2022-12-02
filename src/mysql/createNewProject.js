@@ -15,7 +15,7 @@ async function createNewProject (id, platform, title, description) {
           resolve(false)
         }
       } catch {
-        console.log('ERROR: ' + err.sqlMessage);
+        console.log('ERROR: ' + err.message);
       }
     })
   })
