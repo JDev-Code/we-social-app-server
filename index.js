@@ -8,6 +8,7 @@ import getMessagesProcess from './src/process/getMessagesProcess.js'
 import getProjectsProcess from './src/process/getProjectsProcess.js'
 import getUserInfoProcess from './src/process/getUserInfoProcess.js'
 import createNewMessage from './src/mysql/createNewMessage.js'
+import deleteProjectProcess from './src/process/deleteProjectProcess.js'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -97,6 +98,10 @@ app.get('/getmessages', async (req, res) => {
 
 app.get('/getuserinfo', async (req, res) => {
   res.send(await getUserInfoProcess(req))
+})
+
+app.post('/deleteProject', async (req, res) => {
+  res.send(await deleteProjectProcess(req))
 })
 
 server.listen(PORT, () => {
