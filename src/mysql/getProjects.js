@@ -10,6 +10,7 @@ async function getProjects () {
         if (result.length === 0) {
           resolve(false)
         } else {
+          console.log(result)
           resolve(result)
         }
       } catch {
