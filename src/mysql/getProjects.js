@@ -3,6 +3,7 @@ import conn from './connection.js'
 async function getProjects () {
 
   const query = `SELECT P.id, P.platform, P.title, P.description, P.user_id, U.username, U.identifier FROM projects P, users U WHERE U.id = P.user_id`
+
   return new Promise((resolve) => {
     conn.query(query, function (err, result) {
       try {
@@ -10,7 +11,6 @@ async function getProjects () {
         if (result.length === 0) {
           resolve(false)
         } else {
-          console.log(result)
           resolve(result)
         }
       } catch {
