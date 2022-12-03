@@ -2,7 +2,7 @@ import conn from './connection.js'
 
 async function deleteProject (id) {
 
-  const query = `DELETE FROM projects WHERE id=${id})`
+  const query = `DELETE FROM projects WHERE id=${id}`
 
   return new Promise((resolve) => {
 
