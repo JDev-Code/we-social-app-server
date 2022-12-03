@@ -21,19 +21,3 @@ async function getProjects () {
 }
 
 export default getProjects
-
-/* return new Promise((resolve) => {
-
-  conn.query(query, function (err, result) {
-    try {
-      if (err) throw err
-      if (result.length === 0) {
-        resolve(false)
-      } else {
-        resolve(result)
-      }
-    } catch {
-      console.log('ERROR: ' + err.sqlMessage);
-    }
-  })
-}) */

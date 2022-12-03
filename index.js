@@ -58,7 +58,6 @@ io.on('connection', (socket) => {
   })
 
   socket.on('sendMsg', (roomId, msg) => {
-    console.log(roomId,  '  ', msg)
     connections.forEach(async (c) => {
       console.log('hey', roomId, c.myRoom)
       if (c.myRoom === roomId) {
