@@ -8,13 +8,13 @@ const conn = mysql.createPool({
   port: 7312
 })
 
-conn.connect(function (err) {
+/* conn.connect(function (err) {
   try {
     if (err) throw err
     console.log("DATABASE CONNECTED!")
   } catch {
     console.log('ERROR: ' + err.message)
   }
-}) 
+})  */
 
 export default conn
