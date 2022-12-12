@@ -8,6 +8,8 @@ const conn = mysql.createPool({
   port: 7312
 })
 
+export default conn
+
 /* conn.connect(function (err) {
   try {
     if (err) throw err
@@ -16,5 +18,3 @@ const conn = mysql.createPool({
     console.log('ERROR: ' + err.message)
   }
 })  */
-
-export default conn

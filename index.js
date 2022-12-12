@@ -16,8 +16,8 @@ const server = http.createServer(app)
 const io = new Server(server)
 
 app.use(express.json())
-let connections = []
 
+let connections = []
 // Run when client connects
 io.on('connection', (socket) => {
   console.log('just connected:', socket.id)
@@ -38,14 +38,12 @@ io.on('connection', (socket) => {
     })
     connections = newConnections
     connections.push({ myRoom: myRoom, socket: socket })
-    connections.forEach(c => {
-      console.log(c.myRoom, c.socket.id)
-    })
-    console.log('TOTAL CONNECTIONS: ', connections.length)
-    console.log('MY ROOMS: ', socket.rooms.size);
+    connections.forEach(c => { console.log(c.myRoom, c.socket.id) })
     if (socket.rooms.size === 0) {
       socket.join(socket.id)
     }
+    console.log('TOTAL CONNECTIONS: ', connections.length)
+    console.log('MY ROOMS: ', socket.rooms.size);
   })
 
   socket.on('sendMsg', (roomId, msg) => {
@@ -108,4 +106,5 @@ app.post('/deleteProject', async (req, res) => {
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 })
+
 
