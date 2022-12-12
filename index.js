@@ -38,9 +38,10 @@ io.on('connection', (socket) => {
     })
     connections = newConnections
     connections.push({ myRoom: myRoom, socket: socket })
+    socket.join(socket.id)
     connections.forEach(c => {
       console.log(c.myRoom, c.socket.id)
-    });
+    })
     console.log('TOTAL CONNECTIONS: ', connections.length)
     console.log('MY ROOMS: ',socket.rooms.size);
   })
