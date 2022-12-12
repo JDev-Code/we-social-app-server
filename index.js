@@ -42,10 +42,25 @@ io.on('connection', (socket) => {
       console.log(c.myRoom, c.socket.id)
     })
     console.log('TOTAL CONNECTIONS: ', connections.length)
-    console.log('MY ROOMS: ',socket.rooms.size);
-    if (socket.rooms.size === 0){
+    console.log('MY ROOMS: ', socket.rooms.size);
+    if (socket.rooms.size === 0) {
       socket.join(socket.id)
     }
+  })
+
+  socket.on('sendMsg', (roomId, msg) => {
+    connections.forEach(async (c) => {
+      console.log('hey', roomId, c.myRoom)
+      if (c.myRoom === roomId) {
+        console.log('sending msg to room ', c.socket.id)
+        await socket.join(c.socket.id)
+        console.log('MY ROOMS: ', socket.rooms.size);
+        socket.to(c.socket.id).emit('msgFromServer', msg)
+        await socket.leave(c.socket.id)
+        console.log('MY ROOMS: ', socket.rooms.size);
+      }
+    })
+    createNewMessage(msg)
   })
 
   socket.on('bye', (myRoom) => {
@@ -59,22 +74,6 @@ io.on('connection', (socket) => {
     })
     connections = newConnections
   })
-
-  socket.on('sendMsg', (roomId, msg) => {
-    connections.forEach(async (c) => {
-      console.log('hey', roomId, c.myRoom)
-      if (c.myRoom === roomId) {
-        console.log('sending msg to room ',c.socket.id)
-        await socket.join(c.socket.id)
-        console.log('MY ROOMS: ',socket.rooms.size);
-        socket.to(c.socket.id).emit('msgFromServer', msg)
-        await socket.leave(c.socket.id)
-        console.log('MY ROOMS: ',socket.rooms.size);
-      }
-    })
-      createNewMessage(msg)
-  })
-
 
 })
 
