@@ -32,17 +32,17 @@ io.on('connection', (socket) => {
         newConnections.push(c)
       } else {
         console.log('disconnecting user repeated')
-        c.socket.leave(socket.id)
+        //c.socket.leave(socket.id)
         //c.socket.disconnect()
       }
     })
     connections = newConnections
     connections.push({ myRoom: myRoom, socket: socket })
     connections.forEach(c => { console.log(c.myRoom, c.socket.id) })
-    if (socket.rooms.size === 0) {
+/*     if (socket.rooms.size === 0) {
       console.log("NO TENGO SALAS")
       socket.join(socket.id)
-    }
+    } */
     console.log('TOTAL CONNECTIONS: ', connections.length)
     console.log('MY ROOMS: ', socket.rooms.size)
   })
