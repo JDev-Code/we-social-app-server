@@ -8,6 +8,10 @@ const conn = mysql.createPool({
   port: 7312
 })
 
+conn.getConnection(function(err, connection) {
+  conn.releaseConnection(connection) 
+})
+
 export default conn
 
 /* conn.connect(function (err) {

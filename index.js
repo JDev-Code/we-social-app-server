@@ -40,7 +40,7 @@ io.on('connection', (socket) => {
     connections.push({ myRoom: myRoom, socket: socket })
     connections.forEach(c => { console.log(c.myRoom, c.socket.id) })
     if (socket.rooms.size === 0) {
-      console.log("NO TENGO SALAS");
+      console.log("NO TENGO SALAS")
       socket.join(socket.id)
     }
     console.log('TOTAL CONNECTIONS: ', connections.length)
