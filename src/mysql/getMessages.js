@@ -1,5 +1,6 @@
 import conn from './connection.js'
 
+// Obtener todos los mensajes de un usuario de la base de datos
 async function getMessages (myId) {
 
   const query = `SELECT M.msgFrom, M.msgTo, M.message, M.isRead, U.username, U.identifier 

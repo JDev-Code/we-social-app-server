@@ -1,5 +1,6 @@
 import mysql from 'mysql2'
 
+// Conexion a la base de datos
 const conn = mysql.createPool({
   host: "containers-us-west-65.railway.app",
   user: "root",
@@ -13,12 +14,3 @@ conn.getConnection(function(err, connection) {
 })
 
 export default conn
-
-/* conn.connect(function (err) {
-  try {
-    if (err) throw err
-    console.log("DATABASE CONNECTED!")
-  } catch {
-    console.log('ERROR: ' + err.message)
-  }
-})  */

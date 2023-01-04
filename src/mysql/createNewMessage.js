@@ -1,5 +1,6 @@
 import conn from './connection.js'
 
+// Guarda un nuevo mensaje en la base de datos
 async function createNewMessage (msg) {
 
   const query = `INSERT INTO messages(msgFrom, msgTo, message, isRead) VALUES("${msg.msgFrom}","${msg.msgTo}","${msg.message}", 0 )`

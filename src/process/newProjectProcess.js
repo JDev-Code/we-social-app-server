@@ -1,6 +1,7 @@
 import decipherAES from "../util/decipherAES.js"
 import createNewProject from "../mysql/createNewProject.js"
 
+// Proceso para guardar un nuevo proyecto en la base de datos
 async function newProjectProcess(req){
   console.log('NEWPROJECT')
   var response = response = {

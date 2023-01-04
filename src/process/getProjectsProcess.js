@@ -1,5 +1,6 @@
 import getProjects from "../mysql/getProjects.js"
 
+// Proceso para obtener todos los proyectos
 async function getProjectsProcess(){
   console.log('GETPROJECTS');
   var response = {

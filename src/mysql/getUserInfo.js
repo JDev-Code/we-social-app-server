@@ -1,5 +1,6 @@
 import conn from './connection.js'
 
+// Obtiene la informacion de un usuario de la base de datos
 async function getUserInfo (id) {
 
   const query = `SELECT id, username, identifier FROM users WHERE id='${id}'`

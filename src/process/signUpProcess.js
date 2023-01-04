@@ -7,7 +7,7 @@ import generateID from "../util/generateID.js"
 import generateNumber from "../util/generateNumber.js"
 import signUp from "../mysql/signUp.js"
 
-
+// Proceso para registrar un nuevo usuario
 async function signUpProcess(req){
 
   console.log('SIGNUP')

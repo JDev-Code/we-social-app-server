@@ -3,6 +3,7 @@ import decipherAES from "../util/decipherAES.js"
 import cipherMD5 from "../util/cipherMD5.js"
 import logIn from "../mysql/logIn.js"
 
+// Proceso para comprobar si un usuario existe
 async function logInProcess (req) {
 
   console.log('LOGIN')

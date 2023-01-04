@@ -1,3 +1,4 @@
+// Genera un numero aleatorio de 4 cifras
 function generateNumber () {
     let random = Math.trunc(Math.random() * 10000).toString()
     let length = random.toString().length

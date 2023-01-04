@@ -1,5 +1,6 @@
 import conn from './connection.js'
 
+// Borra un proyecto de la base de datos
 async function deleteProject (id) {
 
   const query = `DELETE FROM projects WHERE id=${id}`

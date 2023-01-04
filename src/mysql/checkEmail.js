@@ -1,5 +1,6 @@
 import conn from './connection.js'
 
+// Comprueba si un email existe en la base de datos
 async function checkEmail (email) {
 
   const query = `SELECT * FROM users WHERE email="${email}"`

@@ -10,6 +10,7 @@ import getUserInfoProcess from './src/process/getUserInfoProcess.js'
 import createNewMessage from './src/mysql/createNewMessage.js'
 import deleteProjectProcess from './src/process/deleteProjectProcess.js'
 
+// Inicia el servidor
 const app = express()
 const PORT = process.env.PORT || 3000
 const server = http.createServer(app)
@@ -17,6 +18,7 @@ const io = new Server(server)
 
 app.use(express.json())
 
+// Eventos del socket
 let connections = []
 // Run when client connects
 io.on('connection', (socket) => {
@@ -32,17 +34,12 @@ io.on('connection', (socket) => {
         newConnections.push(c)
       } else {
         console.log('disconnecting user repeated')
-        //c.socket.leave(socket.id)
-        //c.socket.disconnect()
       }
     })
     connections = newConnections
     connections.push({ myRoom: myRoom, socket: socket })
     connections.forEach(c => { console.log(c.myRoom, c.socket.id) })
-/*     if (socket.rooms.size === 0) {
-      console.log("NO TENGO SALAS")
-      socket.join(socket.id)
-    } */
+
     console.log('TOTAL CONNECTIONS: ', connections.length)
     console.log('MY ROOMS: ', socket.rooms.size)
   })
@@ -76,6 +73,7 @@ io.on('connection', (socket) => {
 
 })
 
+// Llamadas HTTP
 app.post('/login', async (req, res) => {
   res.send(await logInProcess(req))
 })

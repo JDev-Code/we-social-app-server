@@ -1,5 +1,6 @@
 import conn from './connection.js'
 
+// Obtiene todos los proyectos de la base de datos y la información de usuario de cada uno
 async function getProjects () {
 
   const query = `SELECT P.id, P.platform, P.title, P.description, P.user_id, U.username, U.identifier FROM projects P, users U WHERE U.id = P.user_id`

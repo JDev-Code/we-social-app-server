@@ -1,6 +1,7 @@
 import getUserInfo from '../mysql/getUserInfo.js'
 import decipherAES from '../util/decipherAES.js'
 
+// Proceso para obtener la información de un usuario
 async function getUserInfoProcess(req){
   console.log('GETUSERINFO')
   var response = {

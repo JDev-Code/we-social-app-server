@@ -1,5 +1,6 @@
 import conn from './connection.js'
 
+// Comprueba si un usuario existe en la base de datos
 async function logIn (email, password) {
 
   const query = `SELECT * FROM users WHERE email="${email}" AND password="${password}"`
